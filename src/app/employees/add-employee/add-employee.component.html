@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="card login-card">
+    <div class="row no-gutters">
+      <div class="col-md-5">
+        <img src="../../../assets/13.jpg" alt="login" class="login-card-img">
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <div class="brand-wrapper">
+            <img src="../../../assets/logo.svg" alt="logo" class="logo">
+          </div>
+          <p class="login-card-description">Employee Registration</p>
+
+          <form (submit)="addEmployee(employeeForm)" #employeeForm='ngForm'>
+            <div class="form-group">
+              <label for="empName">Employee's Name</label>
+
+              <input #name="ngModel" required type="text" class="form-control" name="name" placeholder="Enter name"
+                [(ngModel)]="employee.empName">
+              <small><span *ngIf="name.invalid && name.touched">Name is required</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Employee's email</label>
+              <input #email="ngModel" type="email" class="form-control" name="email" placeholder="name@example.com" required
+                [(ngModel)]="employee.email">
+        
+              <small> <span *ngIf="email.invalid && email.touched">Email is required</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Employee's Address</label>
+              <input #address="ngModel"  type="text" class="form-control" name="address" placeholder="Enter Address" required
+                [(ngModel)]="employee.address">
+              <small><span *ngIf="address.invalid && address.touched">Address is required</span></small>
+            </div>
+
+            <div class="form-group col-md-6">
+              <label for="profile">Employee's image</label>
+              <input type="file" name="profile" (change)="onFileChanged($event)">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Employee's password</label>
+              <input #password="ngModel" type="password" class="form-control" name="password" placeholder="enter password"
+                [(ngModel)]="employee.password" minlength="5" required>
+              <small><span *ngIf="password.invalid && password.touched">Please enter password</span></small>
+            </div>
+
+
+            <div class="form-group">
+              <label for="confPassword">Employee's Confirm password</label>
+              <input  #confPassword="ngModel" class="error" type="password" class="form-control" name="confPassword"
+                appConfirmEqualValidator="password" placeholder="enter password" required ngModel>
+              <small><span *ngIf="confPassword.touched && confPassword.errors?.notEqual">Password is not
+                  matching</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="experience">Employee's Experience</label>
+              <input  #experience="ngModel" required type="number" class="form-control" name="experience" placeholder="enter experience"
+                [(ngModel)]="employee.experience">
+              <small><span *ngIf="experience.invalid && experience.touched">Experience is required (If not enter
+                  0)</span></small>
+            </div>
+
+
+            <div class="form-group">
+              <label for="birthdate">Employee's birthdate</label>
+              <input  #birthdate="ngModel" type="date" class="form-control" name="birthdate" placeholder="Enter birthdate" required
+                [(ngModel)]="employee.dateOfBirth">
+      
+            </div>
+
+
+            <div class="form-group">
+              <label for="joindate">Employee's Joining Date</label>
+              <input  #joindate="ngModel" type="date" class="form-control" name="joindate" placeholder="Enter joindate" required
+                [(ngModel)]="employee.joinDate">
+              <small><span *ngIf="joindate.invalid && joindate.touched">Please enter joining date</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select  #gender="ngModel" class="form-control" name="gender" required [(ngModel)]="employee.gender">
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+                <option value="OTHER">OTHER</option>
+              </select>
+              <small><span *ngIf="gender.invalid && gender.touched">Please select gender</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="contactNo">Employee's contact number</label>
+              <input  #contactNo="ngModel" type="text" class="form-control" name="contactNo" placeholder="Enter mobile number" required
+                [(ngModel)]="employee.contactNo" maxlength="10" minlength="10">
+              <small><span *ngIf="contactNo.invalid && contactNo.touched">Contact no is invalid</span></small>
+            </div>
+            <div class="form-group">
+              <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Submit">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

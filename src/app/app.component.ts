@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'salon-management-system';
+  title = 'SalonManagementApp';
+
+
+  // ngOnInit(): void {
+  //   //Toggle Click Function
+  //   $("#menuBtn").click(function (e) {
+  //     e.preventDefault();
+  //     $("#wrapper").toggleClass("toggled");
+  //   });
+  // }
 }

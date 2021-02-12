@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="card login-card">
+    <div class="row no-gutters">
+      <div class="col-md-5">
+        <img src="../../../assets/13.jpg" alt="login" class="login-card-img">
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <div class="brand-wrapper">
+            <img src="../../../assets/logo.svg" alt="logo" class="logo">
+          </div>
+          <p class="login-card-description">Customer Registration</p>
+          <form (submit)="addCustomer(custForm)" #custForm='ngForm'>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input required #name="ngModel" type="text" class="form-control" name="name" placeholder="Enter name"
+               [(ngModel)]="customer.custName">
+              <small><span *ngIf="name.invalid && name.touched">Name is required</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input #email="ngModel" type="email" class="form-control" name="email" placeholder="name@example.com"
+                required [(ngModel)]="customer.email">
+              <small> <span *ngIf="email.invalid && email.touched">Email is required</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Password</label>
+              <input #password="ngModel" type="password" class="form-control" name="password"
+                placeholder="enter password" [(ngModel)]="customer.password" required minlength="5" maxlength="8">
+              <small><span *ngIf="password.invalid && password.touched">Password min length 5 and max length
+                  8</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Confirm password</label>
+              <input #confPassword="ngModel" class="error" type="password" class="form-control" name="ConfPassword"
+                appConfirmPassEqualValidator="password" placeholder="enter password" ngModel required>
+
+              <small><span *ngIf="confPassword.touched && confPassword.errors?.notEqual">Password is not
+                  matching</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select #gender="ngModel" class="form-control" name="gender" required [(ngModel)]="customer.gender">
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+                <option value="OTHER">OTHER</option>
+              </select>
+              <small><span *ngIf="gender.invalid && gender.touched">Please select gender</span></small>
+            </div>
+
+            <div class="form-group">
+              <label for="contactNo">Contact number</label>
+              <input #contactno="ngModel" type="number" class="form-control" name="contactNo"
+                placeholder="Enter mobile number" required [(ngModel)]="customer.contactNo" minlength="10" maxlength="10">
+              <small><span *ngIf="contactno.invalid && contactno.touched">Contact no is required</span></small>
+            </div>
+            <div class="form-group">
+              <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Submit">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          
+            
+
+      

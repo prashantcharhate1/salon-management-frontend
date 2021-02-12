@@ -1,0 +1,126 @@
+<!-- <p>!</p>
+<nav>
+    <a routerLink="/appointments/book-appointment">Book Appointment</a>&nbsp;
+    <a routerLink="/appointments/view-appointment">My Apointment</a>
+</nav>
+<h1>Hello Customer </h1>
+
+<div class="col-sm-5">
+    <app-view-customer>
+    </app-view-customer>
+</div>
+
+<app-view-appointment>
+</app-view-appointment>
+
+<router-outlet>
+</router-outlet> -->
+
+
+
+<!-- 
+<nav>
+    <a><span (click)="toggleOn =!toggleOn">My Apointment</span></a>
+</nav>
+<div class="container pt-4 ">
+    <div class="row ">
+        <table>
+            <tr>
+                <td>
+                    <app-view-customer>
+                    </app-view-customer>
+                </td>
+                <td>
+                    <div *ngIf="!toggleOn">
+                        <app-view-appointment>
+                        </app-view-appointment>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+</div> -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cards Hover2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <h3>
+                        <a href="https://www.linkedin.com/in/adamdipinto/" target="_blank">_adamdipinto</a>
+                    </h3>
+                    <p>This is where I network and build my professional protfolio.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <h3>
+                        <a href="https://twitter.com/AdamDipinto" target="_blank">@AdamDipinto</a>
+                    </h3>
+                    <p>This is where I read news and network with different social groups.</p>
+                </div>
+            </div>
+        </div> -->
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                        <i class="fa fa-github-square" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <!-- <div class="content">
+                    <h3>
+                        <a href="https://github.com/atom888" target="_blank">{{customer.custName}}</a>
+                    </h3>
+                    <h5>Email : {{ customer.email }}</h5>
+                    <h5>Contact No : {{ customer.contactNo }}</h5>
+                    <p>This is where I share code and work on projects.</p>
+                </div> -->
+            </div>
+        </div>
+        <div id="banner">
+            <div class="banner-btn banner-text">
+                <a routerLink="/customers/add-customer"><span></span>Book Appointment</a>
+                <a routerLink="/customers/login"><span></span>My Appointment</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

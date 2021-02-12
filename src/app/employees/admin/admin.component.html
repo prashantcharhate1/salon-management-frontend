@@ -1,0 +1,43 @@
+<body>
+
+    <div class="container pt-4">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <button (click)="ListEmployee()" type="button" class="btn btn-secondary">Employee List</button>
+            <button (click)="ListCustomer()" type="button" class="btn btn-secondary">Customer List</button>
+            <button (click)="ListAppointment()" type="button" class="btn btn-secondary">Appointment List</button>
+            <button (click)="logout()" type="button" class="btn btn-secondary">Log Out</button>
+        </div>
+
+        <div class="title-text">
+            <p>Appointments Data</p>
+        </div>
+
+        <div class="scrollbar style-2">
+            <app-list-all-appointment></app-list-all-appointment>
+        </div>
+
+        <div class="title-text">
+            <p>Employees Data</p>
+        </div>
+        <div>
+            <a class="add-emp" routerLink="/employees/add-employee">Add new
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="25" fill="currentColor"
+                    class="bi bi-person-plus" viewBox="0 0 16 16">
+                    <path
+                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    <path fill-rule="evenodd"
+                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                </svg></a>
+        </div>
+        <div class="scrollbar">
+            <app-list-all-employees></app-list-all-employees>
+        </div>
+
+        <div class="title-text">
+            <p>Customers Data</p>
+        </div>
+        <div class="scrollbar col-sm-6-12">
+            <app-list-all-customers></app-list-all-customers>
+        </div>
+    </div>
+</body>

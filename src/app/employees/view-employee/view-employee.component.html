@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cards Hover2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+    <ul>
+        <li><a routerLink="/employees/update-employee/{{employee.empId}}"><span></span>Update Profile</a></li>
+        <li><a (click)="onCheckAppointments()"><span></span>Today's Appointments</a></li>
+        <li><a (click)="logout()" >Log out</a></li>
+
+      </ul>
+    <div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                        <img src="../../../assets/images/user-male.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <h3>
+                        <p>{{employee.empName}}</p>
+                    </h3>
+                    <p>Email : {{ employee.email }}</p>
+                    <p>Contact No : {{ employee.contactNo }}</p>
+                    <p>This is where I share code and work on projects.</p>
+                </div>
+            </div>
+        </div>    
+        <div id="banner">
+            <div *ngIf="checked">
+                <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Appointment Id</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let a of appointmentList">
+                    
+                          <td>{{a.appId}}</td>
+                          <td>{{a.service.serviceName}}</td>
+                          <td>{{a.appDate}}</td>
+                          <td>{{a.appTime}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+</html>
+
+
+<!-- <div>
+    <div class="banner-btn banner-text">
+        <a routerLink="/employees/update-employee/{{employee.empId}}"><span></span>Update Profile</a>
+        <a (click)="onCheckAppointments()"><span></span>Today's Appointments</a>
+    </div>
+    <button id="mybtn" type="button" (click)="logout()" >
+         Log out
+      </button>
+</div> -->

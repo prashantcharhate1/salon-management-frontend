@@ -1,0 +1,19 @@
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Appointment Id</th>
+      <th scope="col">Service</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let a of appointmentList">
+  
+        <td>{{a.appId}}</td>
+        <td>{{a.service.serviceName}}</td>
+        <td>{{a.appDate}}</td>
+        <td>{{a.appTime}}</td>
+    </tr>
+  </tbody>
+</table>

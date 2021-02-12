@@ -1,0 +1,21 @@
+<div class="title-text">
+  <p>Stylist</p>
+  <h1>Our Professionals</h1>
+</div>
+<div class="testimonial-row">
+
+  <div class="testimonial-col" *ngFor="let e of employeeList">
+    <div class="user">
+      <img src="data:image/jpeg;base64,{{e.picByte}}" alt="">
+      <div class="user-info">
+        <h4>{{e.empName}}<i class="fa fa-twitter"></i></h4>
+
+      </div>
+    </div>
+    <p>
+      “I just wanted to drop you a line to thank you for yet another GREAT haircut and color! Thanks to you, I now
+      have the style I’ve always wanted and the hair that look 100% every time! I get a lot of compliments.
+      Thank you, Raff! You’re the best!”</p>
+  </div>
+
+</div>

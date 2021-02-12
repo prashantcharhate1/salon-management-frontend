@@ -1,0 +1,94 @@
+<p>book-appointment works!</p>
+<div class="container">
+    <div class="card login-card">
+        <div class="row no-gutters">
+            <div class="col-md-5">
+                <img src="../../../assets/11.jpg" alt="login" class="login-card-img">
+            </div>
+            <div class="col-md-7">
+                <div class="card-body">
+                    <div class="brand-wrapper">
+                        <img src="../../../assets/logo.svg" alt="logo" class="logo">
+                    </div>
+                    <p class="login-card-description">Book Appointment</p>
+                    <form #appointmentForm="ngForm">
+
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select #service="ngModel" class="form-control" name="service" required
+                                [(ngModel)]="appointment.service" (change)="onServiceselection($event)">
+                                <option *ngFor="let s of serviceList" value={{s.serviceId}}
+                                    (change)="onServiceselection($event)">
+
+                                    {{s.serviceId}}
+                                    {{s.serviceName}}
+
+                                </option>
+                            </select>
+                        </div>
+
+                        <!-- <div class="form-group">
+
+                            <label for="rate">Customer Id</label>
+                            <input class="form-control" type="number" readonly [(ngModel)]="appointment.customer" name="cust">
+
+                        </div> -->
+
+                        <div class="form-group">
+
+                            <label for="rate">Rate</label>
+                            <input class="form-control" type="number" readonly [(ngModel)]="serviceRate" name="rate">
+
+                        </div>
+                        <!-- <span [(ngModel)]="serviceRate" name="rate"></span> -->
+
+                        <div class="form-group">
+                            <label for="employee">Choose Employee</label>
+                            <select #employee="ngModel" class="form-control" name="employee" required
+                                [(ngModel)]="appointment.employee">
+                                <option *ngFor="let e of employeeList" value={{e.empId}}>
+
+                                    {{e.empName}}
+
+                                </option>
+
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appTime">Appointment Time</label>
+                            <input #appointmentTime="ngModel" type="time" class="form-control" name="appTime"
+                                placeholder="Appointmet Time" required [(ngModel)]="appointment.appTime">
+                            <small><span *ngIf="appointmentTime.invalid && appointmentTime.touched">Timing is
+                                    required</span></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appDate">Appointment Date</label>
+                            <input #appointmentDate="ngModel" type="date" class="form-control " name="appDate "
+                                placeholder="Appointmnt Date " required [(ngModel)]="appointment.appDate">
+                            <span *ngIf="appointmentDate.invalid && appointmentDate.touched " class="error ">Enter
+                                appointment date</span>
+                        </div>
+
+                        <div class="form-group ">
+                            <!-- <input name="login " id="login " class="btn btn-block login-btn mb-4 " type="button " value="Submit " (click)="verify() "> -->
+                            <!-- <input name="payment" id="login " class="btn btn-block login-btn mb-4 " type="submit "
+                                value="Proceed For Payment"> -->
+
+                            <div class="form-group ">
+                                <button class="btn btn-block login-btn mb-4 " type="submit"
+                                    (click)="saveFormDataTemp(appointmentForm)">Proceed For
+                                    Payment</button>
+                            </div>
+                            <!-- <a class="btn btn-block login-btn mb-4 " (click)="saveFormDataTemp(appointmentForm)" routerLink="/payments/confirm-payment" [disabled]="appointmentForm.invalid">Proceed For
+                                Payment</a> -->
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

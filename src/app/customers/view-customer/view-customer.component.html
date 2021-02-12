@@ -1,0 +1,104 @@
+
+<!-- Add icon library -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<!-- <div>
+  
+    <h5>{{customer.custName}}</h5>
+    <h5>Birth Date : {{ customer.birthdate }}</h5>
+    <h5>Gender : {{ customer.gender }}</h5>
+    <h5>Email : {{ customer.email }}</h5>
+    <h5>Contact No : {{ customer.contactNo }}</h5>
+    <button><a  routerLink="/appointments/book-appointment/{{customer.custId}}">Book Appointment</a></button>
+
+
+  </div> -->
+
+  <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cards Hover2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+    <ul>
+        <li><a routerLink="/customers/update-customer/{{customer.custId}}"><span></span>Update Profile</a></li>
+        <li><a routerLink="/appointments/book-appointment/{{customer.custId}}"><span></span>Book Appointment</a></li>
+        <li><a (click)="onCheckAppointments()"><span></span>My Appointment</a></li>
+        <li><a (click)="logout()" >Log out</a></li>
+        <li><a (click)="DeleteCustomer(customer)"><span></span>Deactivate Account</a></li>
+
+      </ul>
+    <div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <div class="icon">
+                      <img src="../../../assets/images/user-male.png" alt="">
+                      <!-- <button (click)="DeleteCustomer(customer)" type="button" class="btn btn-secondary"><i class="fa fa-trash"></i>
+                      </button> -->
+                        <!-- <i class="fa fa-github-square" aria-hidden="true"></i> -->
+                    </div>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <h3>
+                        <p>{{customer.custName}}</p>
+                    </h3>
+                    <p>Email : {{ customer.email }}</p>
+                      <p>Contact No : {{ customer.contactNo }}</p>
+                    <p>This is where I share code and work on projects.</p>
+                    
+                </div>
+                
+            </div>
+        </div>
+       
+        <div id="banner">
+            <!-- <h3  id="quote">“Life is more beautiful when you meet the right hairdresser.”</h3> -->
+            <div class="banner-btn banner-text">
+                <!-- <a routerLink="/appointments/book-appointment/{{customer.custId}}"><span></span>Book Appointment</a>
+                <a (click)="onCheckAppointments()"><span></span>My Appointment</a> -->
+                
+                <div *ngIf="checked">
+                    <!-- <app-list-appointments-by-date></app-list-appointments-by-date> -->
+                    <table class="table">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">Appointment Id</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let a of appointmentList">
+                        
+                              <td>{{a.appId}}</td>
+                              <td>{{a.service.serviceName}}</td>
+                              <td>{{a.appDate}}</td>
+                              <td>{{a.appTime}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+                
+            </div>
+        </div>
+        <!-- <div>
+            <button id="mybtn" type="button" (click)="logout()" >
+                 Log out
+              </button>
+        </div> -->
+    </div>
+</body>
+
+</html>

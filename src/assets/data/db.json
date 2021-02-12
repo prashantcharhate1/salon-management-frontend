@@ -1,0 +1,69 @@
+{
+    "employees": [
+      { "employeeId": 1, 
+        "image": "http://localhost:4200/assets/1.png",
+        "name": "Paresh Dere", 
+        "email": "paresh@gmail.com",
+        "password": "1234",
+        "gender": "male",
+        "dob": "17/05/1997",
+        "joindate": "01/01/2020",
+        "experience": "4",
+        "service": "Beard"
+      },
+      { "employeeId": 2, 
+        "image": "http://localhost:4200/assets/2.png",
+        "name": "Jayesh Bhamare", 
+        "email": "jayesh@gmail.com",
+        "password": "1234",
+        "gender": "male",
+        "dob": "16/05/1999",
+        "joindate": "01/01/2019",
+        "experience": "2",
+        "service": "Hair Cut"
+      },
+      { "employeeId": 3, 
+        "image": "http://localhost:4200/assets/3.png",
+        "name": "Prashant Charhate", 
+        "email": "prashant@gmail.com",
+        "password": "1234",
+        "gender": "male",
+        "dob": "22/01/1996",
+        "joindate": "01/01/2018",
+        "experience": 5,
+        "service": "Hair Color"
+      },
+      { "employeeId": 4, 
+        "image": "http://localhost:4200/assets/4.png",
+        "name": "Parth Padhye", 
+        "email": "parth@gmail.com",
+        "password": "1234",
+        "gender": "male",
+        "dob": "20/06/1995",
+        "joindate": "01/01/2018",
+        "experience": 3,
+        "service": "Hair Cut"
+      }],
+      "services": [
+        {
+          "serviceId": 1,
+          "name": "Hair Cut"
+        },
+        {
+          "serviceId": 2,
+          "name": "Hair Colour"
+        },
+        {
+          "serviceId": 3,
+          "name": "Beard Cut"
+        },
+        {
+          "serviceId": 4,
+          "name": "Beard Shaving"
+        },
+        {
+          "serviceId": 5,
+          "name": "Facial & Skin Care"
+        }
+      ]
+}

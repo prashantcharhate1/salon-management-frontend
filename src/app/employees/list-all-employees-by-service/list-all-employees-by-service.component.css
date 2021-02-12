@@ -1,0 +1,146 @@
+/* .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    display: inline-flex;
+    position: relative;
+    margin: 20px;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+}
+
+button:hover,
+a:hover {
+    color: rgb(179, 101, 101)
+}
+
+.list{
+    display: flexbox;
+}
+h1{
+   
+    color: rgb(221, 159, 134);
+    margin-top: 0px;
+    margin-left: 220px;
+
+} */
+
+.title-text {
+    text-align: center;
+    padding-bottom: 70px;
+
+
+}
+.title-text p{
+margin: auto;
+font-size: 20px;
+color: #538eb3;
+font-weight: bold;
+position: relative;
+z-index: 1;
+display: inline-block;
+}
+
+.title-text p::after{
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#538eb3,#fff);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform:rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+.title-text h1{
+    font-size: 50px;
+}
+
+#testimonial{
+    width: 100%;
+    padding: 70px 0;
+
+}
+
+.testimonial-row{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap:wrap;
+
+
+} 
+ 
+.testimonial-col{
+    flex-basis: 28%;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 12px 15px 10px 8px #070707de;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+
+.testimonial-col p{
+    font-size: 14px; 
+
+}
+.user{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+
+}
+.user img{
+    width: 40px;
+    margin-right: 20px;
+    border-radius: 3px;
+
+
+}
+.user-info .fa{
+    margin-left: 10px;
+    color: #27c0ff;
+    font-size: 20px;
+}
+.user-info small{
+    color: #009688;
+}
+.testimonial-col:hover{
+    transform: translateY(-7px);
+
+}
+@media screen and (max-width: 770px){
+    .testimonial-col{
+        flex-basis: 100%;
+    }
+}
